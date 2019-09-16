@@ -1,7 +1,8 @@
 // Packages
 const express = require('express')
-const database = require('./database')
 require('dotenv').config()
+const database = require('./database')
+
 
 // Express API
 const app = express()
