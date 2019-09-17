@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken')
 
 module.exports = (req, res) => {
 	let userInfo = jwt.verify(req.body.token, process.env.SECRET)
-	User.findById(userInfo._id).then(user => {
+	User.findById(userInfo._id).select('-__v -_id').then(user => {
 		res.send(user)
 	})
 }
