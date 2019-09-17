@@ -32,6 +32,7 @@ app.post('/amenity', require('./controllers/postAmenity.js'))
 app.post('/reviews', require('./controllers/postReviews.js'))
 app.post('/signup', require('./controllers/postUsers.js'))
 app.post('/login', require('./controllers/login.js'))
+app.post('/auth', require('./controllers/postAuthorize.js'))
 app.post('/pay', require('./controllers/postPay.js'))
 
 app.patch('/places/:id', require('./controllers/patchPlace.js'))
