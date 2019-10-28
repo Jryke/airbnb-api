@@ -36,6 +36,7 @@ app.post('/auth', require('./controllers/postAuthorize.js'))
 app.post('/pay', require('./controllers/postPay.js'))
 
 app.patch('/places/:id', require('./controllers/patchPlace.js'))
+app.patch('/users/:token', require('./controllers/patchUser.js'))
 
 app.delete('/places/:id', require('./controllers/deletePlace.js'))
 

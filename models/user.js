@@ -21,5 +21,9 @@ module.exports = mongoose.model('User', {
 		type: String,
 		required: [true, 'password is required'],
 		select: false
-	}
+	},
+	likes: [{
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'Place',
+	}]
 })
