@@ -8,6 +8,7 @@ module.exports = (req, res) => {
 		if (match) {
 			res.send('error')
 		} else {
+			req.body.avatar = `${req.protocol}://${req.get('host')}/${req.file.filename}`
 			req.body.password = bcrypt.hashSync(req.body.password, 10)
 			User.create(req.body)
 			.then(user => {
