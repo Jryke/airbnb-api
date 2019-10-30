@@ -41,6 +41,7 @@ app.post('/pay', require('./controllers/postPay.js'))
 
 app.patch('/places/:id', require('./controllers/patchPlace.js'))
 app.patch('/likes/:token', require('./controllers/patchUserLikes.js'))
+app.patch('/user/:token', upload.single('avatar'), require('./controllers/patchUserInfo.js'))
 
 app.delete('/places/:id', require('./controllers/deletePlace.js'))
 
