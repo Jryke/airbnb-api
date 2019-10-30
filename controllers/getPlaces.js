@@ -10,17 +10,18 @@ module.exports = (req, res) => {
 		req.query.min_guests ? searchObj.guests = { $gte: req.query.min_guests} : null
 		req.query.type ? searchObj.type = req.query.type : null
 		req.query.title ? searchObj.title = req.query.title : null
+		req.query.host ? searchObj.host = req.query.host : null
 		console.log(req.query)
 		return searchObj
 	}
 
 	Place.find(search())
-	.select('bedrooms city country images price reviews title type rating')
+	.select('bedrooms city country images price reviews title type rating host')
 	.populate('type')
-	// .populate({
-	// 	path: 'host',
-	// 	select: 'name avatar'
-	// })
+	.populate({
+		path: 'host',
+		select: 'name avatar'
+	})
 	// .populate('reviews')
 	.lean()
 	.then(data => {
