@@ -29,7 +29,7 @@ app.get('/users', require('./controllers/getUsers.js'))
 app.get('/amenities', require('./controllers/getAmenities.js'))
 app.get('/reviews/:id', require('./controllers/getReviews.js'))
 
-app.post('/places', require('./controllers/postPlaces.js'))
+app.post('/places', upload.array('images'), require('./controllers/postPlaces.js'))
 app.post('/type', require('./controllers/postType.js'))
 app.post('/users', require('./controllers/postUsers.js'))
 app.post('/amenity', require('./controllers/postAmenity.js'))
